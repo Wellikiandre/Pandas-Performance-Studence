@@ -12,6 +12,7 @@ Original file is located at
 #from google.colab import files 
 #uploaded = files.upload()
 #import pandas as pd 
+#import numpy as np
 #import io 
   
 #df = pd.read_csv(io.BytesIO(uploaded['nomeDoArquivo.csv'])) 
@@ -21,7 +22,7 @@ Original file is located at
 # É a maneira mais fácil de fazer upload de um arquivo CSV no Colab.
 # Para isso vá para o conjunto de dados em seu repositório github e clique em “View Raw” . 
 # Copie o link para o conjunto de dados bruto e passe-o como parâmetro para read_csv() no pandas para obter o dataframe. 
-
+import numpy as np
 import pandas as pd 
 url = 'https://raw.githubusercontent.com/Wellikiandre/Pandas-Performance-Studence/master/Analitico/StudentsPerformance.csv'
 df = pd.read_csv(url)
@@ -64,6 +65,8 @@ df['gender'].unique()
 # ver a distribuição entre valores unicos dentro da coluna
 df.gender.value_counts()
 
+provas = ['math score', 'reading score', 'writing score']
+
 #Vetor de ordenação
 provas = ['math score', 'reading score', 'writing score']
 #comando de ordenação (\) deixa continuar o argumento
@@ -76,3 +79,5 @@ df
 
 #consultas
 df[(df.gender == 'male') & (df['test preparation course'] == 'none') & (df['math score']>=70)]
+
+df.groupby(by = 'gender')[provas].agg([np.mean, np.median]).T
