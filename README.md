@@ -11,6 +11,7 @@
 ### 7- > Realizar calculos, media, soma, contagem etc..
 ### 8- > Realizar inserção e retirada de colunas e valores.
 ### 9- > Executar consultas com filtros.
-### 10-> Realizar agrupamento por mais de um valor.
+### 10-> Realizar agrupamento por mais de um valor
+
 
 
